@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dislexia/main.dart';
+import 'package:dislexia/pages/juegos/sopa_letras.dart';
 
 class JuegosPage extends StatelessWidget {
   const JuegosPage({Key? key});
@@ -68,34 +69,44 @@ class JuegosPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Container(
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 24 * fem),
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xff000000)),
-                  color: const Color(0xff2f2e30),
-                  borderRadius: BorderRadius.circular(40 * fem),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0x3f000000),
-                      offset: Offset(0 * fem, 4 * fem),
-                      blurRadius: 2 * fem,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SopaLetrasPage(),
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: SizedBox(
-                    child: Container(
-                      constraints: BoxConstraints(maxWidth: 135 * fem),
-                      child: Text(
-                        'Sopa de letras',
-                        textAlign: TextAlign.center,
-                        style: safeGoogleFont(
-                          'JetBrains Mono',
-                          fontSize: 32 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.32 * ffem / fem,
-                          color: const Color(0xffffffff),
+                  );
+                },
+                child: Container(
+                  margin:
+                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 24 * fem),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: const Color(0xff000000)),
+                    color: const Color(0xff2f2e30),
+                    borderRadius: BorderRadius.circular(40 * fem),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0x3f000000),
+                        offset: Offset(0 * fem, 4 * fem),
+                        blurRadius: 2 * fem,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: SizedBox(
+                      child: Container(
+                        constraints: BoxConstraints(maxWidth: 135 * fem),
+                        child: Text(
+                          'Sopa de letras',
+                          textAlign: TextAlign.center,
+                          style: safeGoogleFont(
+                            'JetBrains Mono',
+                            fontSize: 32 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.32 * ffem / fem,
+                            color: const Color(0xffffffff),
+                          ),
                         ),
                       ),
                     ),
